@@ -11,26 +11,26 @@ function onReady() {
     $('.container').on('click', '.delete-btn', deleteClick);
 }
 
-function appendDom() {
-    $('.container').append('<div id="new-div"></div>');
-}
-
 function addButtons() {
     //console.log('add buttons');
     $('#new-div').append('<button class="swap-btn">Swap</button>');
     $('#new-div').append('<button class="delete-btn">Delete</button>');
 }
 
-function totalClicks() {
-    clicks += 1;
-    //console.log(clicks)
-    $('#new-div').html('<p> Clicks: ' + clicks + '</p>');
+function appendDom() {
+    $('.container').append('<div id="new-div"></div>');
+}
+
+function deleteClick() {
+    $(this).parent().remove();
 }
 
 function swapClick() {
     $('#new-div').toggleClass('yellow');
 }
 
-function deleteClick() {
-    $(this).parent().remove();
+function totalClicks() {
+    clicks += 1;
+    //console.log(clicks)
+    $('#new-div').html('<p> Clicks: ' + clicks + '</p>');
 }
