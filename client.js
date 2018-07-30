@@ -7,8 +7,8 @@ function onReady() {
     $('.generate-btn').on('click', appendDom);
     $('.generate-btn').on('click', totalClicks);
     $('.generate-btn').on('click', addButtons);
-    //$('.swap-btn').on('click', yellowButton);
     $('.container').on('click', '.swap-btn', swapClick);
+    $('.container').on('click', '.delete-btn', deleteClick);
 }
 
 function appendDom() {
@@ -29,4 +29,8 @@ function totalClicks() {
 
 function swapClick() {
     $('#new-div').toggleClass('yellow');
+}
+
+function deleteClick() {
+    $(this).parent().remove();
 }
