@@ -1,7 +1,16 @@
-.container {
+.generate-btn {
+    margin: 10px;
+}
+
+.new-div {
     background-color: red;
 }
 
 .yellow {
     background-color: yellow;
+}
+
+#new-div {
+    height: 40px;
+    margin: 10px;
 }

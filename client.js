@@ -5,20 +5,19 @@ let clicks = 0;
 function onReady() {
     //console.log('jquery is working');
     $('.generate-btn').on('click', appendDom);
-    $('.generate-btn').on('click', totalClicks);
-    $('.generate-btn').on('click', addButtons);
     $('.container').on('click', '.swap-btn', swapClick);
     $('.container').on('click', '.delete-btn', deleteClick);
 }
 
+
 function addButtons() {
-    //console.log('add buttons');
-    $('#new-div').append('<button class="swap-btn">Swap</button>');
-    $('#new-div').append('<button class="delete-btn">Delete</button>');
+    clicks++;
+        $('.new-div').html('<p>' + clicks + '</p><button class="swap-btn">Swap</button><button class="delete-btn">Delete</button>');
 }
 
 function appendDom() {
-    $('.container').append('<div id="new-div"></div>');
+    $('.container').append('<div class="new-div"></div>'); 
+    addButtons();
 }
 
 function deleteClick() {
@@ -26,11 +25,5 @@ function deleteClick() {
 }
 
 function swapClick() {
-    $('#new-div').toggleClass('yellow');
-}
-
-function totalClicks() {
-    clicks += 1;
-    //console.log(clicks)
-    $('#new-div').html('<p> Clicks: ' + clicks + '</p>');
+    $(this).parent().toggleClass('yellow');
 }
